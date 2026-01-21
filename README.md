@@ -23,6 +23,11 @@ The lab is fully simulated using **GNS3**, **Linux servers**, **firewalls**, **I
 
 ## 🧱 Global Architecture
 
+## Network Topology
+
+![SOC Lab Topology](architecture/soc_topology.png)
+
+
 ### 🔹 Network Zones
 
 The SOC architecture is based on a **multi‑zone security model**:
