@@ -1,1 +1,153 @@
-# SOC Anti-Drone Lab
+# SOC Laboratory – Anti‑Drone Security Platform (Educational Project)
+
+## 📌 Project Overview
+
+This repository presents a **complete Security Operations Center (SOC) laboratory** designed and implemented as part of a **Final Year Engineering Project (PFE)**. The project focuses on **network defense, intrusion detection, threat monitoring, and attack simulation**, with a particular emphasis on **anti‑drone security concepts** within a controlled and virtualized environment.
+
+The lab is fully simulated using **GNS3**, **Linux servers**, **firewalls**, **IDS/IPS systems**, **honeypots**, and **Dockerized vulnerable services**. All configurations are documented in a **safe, sanitized, and non‑deployable manner**, following professional SOC documentation standards.
+
+⚠️ **Important**: This repository does NOT contain real credentials, production IP addresses, or sensitive operational data.
+
+---
+
+## 🎯 Project Objectives
+
+* Design a realistic SOC network architecture
+* Implement network segmentation and perimeter security
+* Deploy IDS/IPS solutions for threat detection
+* Simulate cyber‑attacks to validate detection mechanisms
+* Centralize monitoring and analysis
+* Apply ethical and academic cybersecurity practices
+
+---
+
+## 🧱 Global Architecture
+
+### 🔹 Network Zones
+
+The SOC architecture is based on a **multi‑zone security model**:
+
+* **WAN**: Simulated external network / attacker side
+* **DMZ**: Public‑facing services and sensors
+* **LAN**: Internal secured network
+* **SOC Zone**: Monitoring and analysis systems
+* **GUEST Zone**: Isolated untrusted network
+
+### 🔹 Core Components
+
+* **pfSense Firewall** – Network segmentation, filtering, NAT
+* **Snort IDS** – Network intrusion detection
+* **Suricata IPS** – Real‑time traffic inspection
+* **Cowrie Honeypot** – Attacker behavior analysis
+* **Docker Services** – DVWA, OpenVAS
+* **Kali Linux** – Attack simulation
+* **Ubuntu Servers** – Sensors & services
+
+---
+
+## 🖥 Virtualization & Simulation
+
+### GNS3 Usage
+
+The entire SOC lab is implemented in **GNS3**, allowing:
+
+* Realistic network topology simulation
+* Integration of virtual machines and Docker containers
+* Controlled attack and defense scenarios
+
+Topology diagrams and screenshots are available in the `architecture/` directory.
+
+---
+
+## 📁 Repository Structure
+
+```
+SOC-AntiDrone-Lab/
+│
+├── README.md                # Project documentation (this file)
+│
+├── architecture/
+│   ├── soc_topology.png     # Network topology diagram
+│   ├── zones_description.md # Network zones explanation
+│   └── design_notes.md
+│
+├── gns3/
+│   ├── project_overview.md
+│   └── topology_screenshots/
+│
+├── firewall/
+│   └── pfsense/
+│       ├── README.md
+│       ├── interfaces.md
+│       ├── firewall_rules.md
+│       ├── nat_configuration.md
+│       └── ids_ips_integration.md
+│
+├── linux_servers/
+│   ├── snort/
+│   │   ├── README.md
+│   │   ├── install.md
+│   │   ├── configuration.md
+│   │   ├── detection_test.md
+│   │   └── rules_examples.md
+│   │
+│   ├── suricata/
+│   │   ├── install.md
+│   │   ├── configuration.md
+│   │   └── alerts_examples.md
+│   │
+│   └── honeypot/
+│       ├── cowrie_installation.md
+│       └── logs_examples.md
+│
+├── docker/
+│   ├── dvwa/
+│   │   ├── docker-compose.yml
+│   │   └── security_notes.md
+│   │
+│   └── openvas/
+│       └── setup.md
+│
+├── attack_simulation/
+│   ├── reconnaissance.md
+│   ├── web_attacks.md
+│   ├── network_attacks.md
+│   └── detection_results.md
+│
+├── defenses/
+│   ├── firewall_hardening.md
+│   ├── ids_ips_response.md
+│   └── mitigation_summary.md
+│
+└── DISCLAIMER.md
+```
+
+---
+
+## 🛠 Technologies & Tools
+
+| Category               | Tools           |
+| ---------------------- | --------------- |
+| Simulation             | GNS3            |
+| Firewall               | pfSense         |
+| IDS/IPS                | Snort, Suricata |
+| Honeypot               | Cowrie          |
+| Containerization       | Docker          |
+| Vulnerable Apps        | DVWA            |
+| Vulnerability Scanning | OpenVAS         |
+| Attacks                | Kali Linux      |
+| OS                     | Ubuntu Linux    |
+
+---
+
+## 🔍 Attack Simulation Methodology
+
+Attacks are simulated in a **controlled environment** to validate SOC capabilities.
+
+Examples:
+
+* Network scanning (reconnaissance)
+* Web application attacks
+* Unauthorized access attempts
+
+All attack descriptions are **high‑level** and do not include

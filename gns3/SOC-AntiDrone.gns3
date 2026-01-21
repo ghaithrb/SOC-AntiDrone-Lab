@@ -1,0 +1,70 @@
+{
+  "auto_close": false,
+  "auto_open": true,
+  "auto_start": false,
+  "drawing_grid_size": 25,
+  "grid_size": 75,
+  "name": "SOC Anti-Drone Lab",
+  "project_id": "soc-antidrone-001",
+  "scene_height": 1000,
+  "scene_width": 1400,
+  "show_grid": false,
+  "show_interface_labels": true,
+  "show_layers": false,
+  "snap_to_grid": false,
+  "topology": {
+    "nodes": [
+      {
+        "node_id": "fw1",
+        "name": "pfSense-FW",
+        "node_type": "qemu",
+        "x": 0,
+        "y": 0,
+        "properties": {
+          "image": "pfsense.qcow2"
+        }
+      },
+      {
+        "node_id": "snort1",
+        "name": "Snort-IDS",
+        "node_type": "docker",
+        "x": -300,
+        "y": 200,
+        "properties": {
+          "image": "snort"
+        }
+      },
+      {
+        "node_id": "honeypot1",
+        "name": "Honeypot",
+        "node_type": "docker",
+        "x": 300,
+        "y": 200,
+        "properties": {
+          "image": "cowrie"
+        }
+      },
+      {
+        "node_id": "kali1",
+        "name": "Attacker-Kali",
+        "node_type": "qemu",
+        "x": 0,
+        "y": 400,
+        "properties": {
+          "image": "kali-linux.qcow2"
+        }
+      }
+    ],
+    "links": [
+      {
+        "nodes": ["fw1", "snort1"]
+      },
+      {
+        "nodes": ["fw1", "honeypot1"]
+      },
+      {
+        "nodes": ["fw1", "kali1"]
+      }
+    ]
+  }
+}
